@@ -1,0 +1,15 @@
+## IGNORE LIST
+.DS_Store
+/nbproject/
+.idea
+
+/application/cache/*
+/application/logs/*
+/user_guide/
+/vendor/
+
+## TAKEN
+!/application/cache/index.html
+!/application/cache/.htaccess
+!/application/logs/index.html
+!/application/logs/.htaccess
