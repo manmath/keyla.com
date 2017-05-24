@@ -1,0 +1,18 @@
+{
+  "name": "keyla.com",
+  "description": "Node package mamanger for Grunt",
+  "license": "ISC",
+  "author": "Man Math",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-clean": "^1.1.0",
+    "grunt-contrib-compass": "^1.1.1",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-cssmin": "^2.2.0",
+    "grunt-contrib-uglify": "^3.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "jit-grunt": "^0.10.0",
+    "time-grunt": "^1.4.0"
+  }
+}

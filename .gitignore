@@ -1,10 +1,15 @@
 ## IGNORE LIST
+.sass-cache
 .DS_Store
 /nbproject/
 .idea
-
+/bower_components/
+/node_modules/
 /application/cache/*
+/application/config/development
+/application/config/production
 /application/logs/*
+/resources/public/*
 /user_guide/
 /vendor/
 
@@ -13,3 +18,4 @@
 !/application/cache/.htaccess
 !/application/logs/index.html
 !/application/logs/.htaccess
+!/resources/public/img

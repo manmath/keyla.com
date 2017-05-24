@@ -1,0 +1,13 @@
+{
+  "name": "keyla.com",
+  "description": "Web package mamanger for Sass",
+  "authors": [
+    "Man Math"
+  ],
+  "license": "ISC",
+  "private": true,
+  "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
+    "font-awesome-sass": "^4.7.0"
+  }
+}
