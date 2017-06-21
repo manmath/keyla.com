@@ -1,8 +1,12 @@
 ## IGNORE LIST
 .sass-cache
 .DS_Store
+
 /nbproject/
 .idea
+.buildpath
+.project
+
 /bower_components/
 /node_modules/
 /application/cache/*

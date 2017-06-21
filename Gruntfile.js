@@ -29,7 +29,6 @@ module.exports = function (grunt) {
             },
             vendor: {
                 bootstrap: '<%= dirs.bower %>/bootstrap-sass/assets',
-                fontAwesome: '<%= dirs.bower %>/font-awesome-sass/assets',
                 jquery: '<%= dirs.bower %>/jquery/dist'
             }
         },
@@ -43,8 +42,7 @@ module.exports = function (grunt) {
                     relativeAssets: true,
                     noLineComments: true,
                     importPath: [
-                        '<%= dirs.vendor.bootstrap %>/stylesheets',
-                        '<%= dirs.vendor.fontAwesome %>/stylesheets'
+                        '<%= dirs.vendor.bootstrap %>/stylesheets'
                     ]
                 }
             }
@@ -67,28 +65,25 @@ module.exports = function (grunt) {
         uglify: {
             dist: {
                 files: {
-                    '<%= dirs.js.dest %>/keyla-lib.min.js': ['<%= concat.jsLib.dest %>'],
-                    '<%= dirs.js.dest %>/keyla.min.js': ['<%= concat.jsApp.dest %>']
+                    '<%= dirs.js.dest %>/keyla.today-lib.min.js': ['<%= concat.jsLib.dest %>'],
+                    '<%= dirs.js.dest %>/keyla.today.min.js': ['<%= concat.jsApp.dest %>']
                 }
             }
         },
         cssmin: {
             main: {
                 src: '<%= dirs.css.dest %>/keyla.css',
-                dest: '<%= dirs.css.dest %>/keyla.min.css'
+                dest: '<%= dirs.css.dest %>/keyla.today.min.css'
             }
         },
         copy: {
             fonts: {
                 files: [{
-                    expand: true,
-                    flatten: true,
-                    src: [
-                        '<%= dirs.vendor.bootstrap %>/fonts/bootstrap/*.{eot,svg,ttf,woff,woff2}',
-                        '<%= dirs.vendor.fontAwesome %>/fonts/font-awesome/*.{eot,svg,ttf,woff,woff2}'
-                    ],
-                    dest: '<%= dirs.fonts.dest %>'
-                }]
+                        expand: true,
+                        flatten: true,
+                        src: '<%= dirs.vendor.bootstrap %>/fonts/bootstrap/*.{eot,svg,ttf,woff,woff2}',
+                        dest: '<%= dirs.fonts.dest %>'
+                    }]
             }
         },
         clean: {
