@@ -1,11 +1,34 @@
 <!DOCTYPE html>
-<html>
+<html lang="km">
     <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Man Math">
+        <?php
+        echo link_tag(CSS_PATH . 'keyla.today-be.min.css');
+        ?>
         <title><?php echo SITE_TITLE; ?></title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
-        <div>TODO write content</div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-2">
+                <?php $this->load->view('backend/partials/left-nav.phtml'); ?>
+                </div>
+                <div class="col-md-10">
+                    <?php $this->load->view('backend/partials/top-nav.phtml'); ?>
+                    <div class="page-header">
+                        <?php echo heading('Header title', 2); ?>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-body"></div>
+                        <div class="panel-footer"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="<?php echo site_url(JS_PATH . 'keyla.today-lib.min.js') ?>" defer></script>
+        <script src="<?php echo site_url(JS_PATH . 'keyla.today-be.min.js') ?>" defer></script>
     </body>
 </html>

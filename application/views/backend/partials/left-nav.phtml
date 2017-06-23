@@ -1,0 +1,28 @@
+<div class="list-group">
+    <?php
+    echo anchor('keyla', 'KEYLA Admin', 'class="list-group-item active"');
+    $items = [
+        'news' => '<span class="glyphicon glyphicon-book" aria-hidden="true"></span> News',
+        'category' => '<span class="glyphicon glyphicon-tags" aria-hidden="true"></span> Category',
+        'fixture' => '<span class="glyphicon glyphicon-calendar" aria-hidden="true"></span> Fixture',
+        'standing' => '<span class="glyphicon glyphicon-stats" aria-hidden="true"></span> Standing',
+        'team' => '<span class="glyphicon glyphicon-text-size" aria-hidden="true"></span> Team',
+        'league' => '<span class="glyphicon glyphicon-time" aria-hidden="true"></span> League',
+        'season' => '<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Season',
+        'stage' => '<span class="glyphicon glyphicon-cd" aria-hidden="true"></span> Stage',
+        'group' => '<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Group',
+        'stadium' => '<span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Stadium',
+        'country' => '<span class="glyphicon glyphicon-globe" aria-hidden="true"></span> Country',
+        'user' => '<span class="glyphicon glyphicon-user" aria-hidden="true"></span> User',
+        'role' => '<span class="glyphicon glyphicon-tag" aria-hidden="true"></span> Role',
+    ];
+    $active = $this->uri->segment(1);
+    foreach ($items as $uri => $title) {
+        if ($uri === $active) {
+            echo anchor($uri, $title, 'class="list-group-item active"');
+        } else {
+            echo anchor($uri, $title, 'class="list-group-item"');
+        }
+    }
+    ?>
+</div>

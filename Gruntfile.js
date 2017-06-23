@@ -21,7 +21,7 @@ module.exports = function (grunt) {
                 dest: '<%= dirs.dest %>/css'
             },
             js: {
-                src: '<%= dirs.src %>/js',
+                src: '<%= dirs.src %>/scripts',
                 dest: '<%= dirs.dest %>/js'
             },
             fonts: {
@@ -54,26 +54,36 @@ module.exports = function (grunt) {
                 ],
                 dest: '<%= dirs.js.dest %>/keyla-lib.js'
             },
-            jsApp: {
+            jsFE: {
                 src: [
                     '<%= dirs.vendor.bootstrap %>/javascripts/bootstrap.js',
-                    '<%= dirs.js.src %>/keyla.js'
+                    '<%= dirs.js.src %>/frontend.js'
                 ],
-                dest: '<%= dirs.js.dest %>/keyla.js'
+                dest: '<%= dirs.js.dest %>/keyla-fe.js'
+            },
+            jsBE: {
+                src: [
+                  '<%= dirs.vendor.bootstrap %>/javascripts/bootstrap.js',
+                  '<%= dirs.js.src %>/backend.js'
+                ],
+                dest: '<%= dirs.js.dest %>/keyla-be.js'
             }
         },
         uglify: {
             dist: {
                 files: {
                     '<%= dirs.js.dest %>/keyla.today-lib.min.js': ['<%= concat.jsLib.dest %>'],
-                    '<%= dirs.js.dest %>/keyla.today.min.js': ['<%= concat.jsApp.dest %>']
+                    '<%= dirs.js.dest %>/keyla.today-fe.min.js': ['<%= concat.jsFE.dest %>'],
+                    '<%= dirs.js.dest %>/keyla.today-be.min.js': ['<%= concat.jsBE.dest %>']
                 }
             }
         },
         cssmin: {
-            main: {
-                src: '<%= dirs.css.dest %>/keyla.css',
-                dest: '<%= dirs.css.dest %>/keyla.today.min.css'
+            dist: {
+                files: {
+                  '<%= dirs.css.dest %>/keyla.today-fe.min.css': ['<%= dirs.css.dest %>/frontend.css'],
+                  '<%= dirs.css.dest %>/keyla.today-be.min.css': ['<%= dirs.css.dest %>/backend.css']
+                }
             }
         },
         copy: {
@@ -97,11 +107,11 @@ module.exports = function (grunt) {
             },
             sass: {
                 files: ['<%= dirs.sass.src %>/**/*.scss'],
-                tasks: ['compass', 'cssmin', 'clean:css']
+                tasks: ['compass', 'cssmin:dist', 'clean:css']
             },
             js: {
                 files: ['<%= dirs.js.src %>/**/*.js'],
-                tasks: ['concat:jsLib', 'concat:jsApp', 'uglify:dist', 'clean:js']
+                tasks: ['concat:jsLib', 'concat:jsFE', 'concat:jsBE', 'uglify:dist', 'clean:js']
             }
         }
     });
