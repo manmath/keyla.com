@@ -39,7 +39,7 @@ keyla.today is a daily news website related to football around the world in Khme
 4. Start docker containers
 
 	```bash
-	vendor/dockerci up -d
+	vendor/bin/dockerci up -d
 	```
 
 5. Add host
