@@ -1,25 +1,24 @@
 ## IGNORE LIST
-.sass-cache
-.DS_Store
-
-/nbproject/
-.idea
 .buildpath
+.DS_Store
+.idea
 .project
-
-/bower_components/
-/node_modules/
+.sass-cache
 /application/cache/*
 /application/config/development
 /application/config/production
 /application/logs/*
+/bower_components/
+/nbproject/
+/node_modules/
 /resources/public/*
 /user_guide/
 /vendor/
+composer.lock
 
 ## TAKEN
-!/application/cache/index.html
 !/application/cache/.htaccess
-!/application/logs/index.html
+!/application/cache/index.html
 !/application/logs/.htaccess
+!/application/logs/index.html
 !/resources/public/img

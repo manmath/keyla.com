@@ -1,0 +1,18 @@
+{
+	"description": "Daily football sport news website in Khmer language",
+	"name": "manmath/keyla-today",
+	"type": "project",
+	"homepage": "https://keyla.today",
+	"license": "MIT",
+	"require": {
+		"php": ">=5.4.8"
+	},
+	"suggest": {
+		"paragonie/random_compat": "Provides better randomness in PHP 5.x"
+	},
+	"require-dev": {
+		"manmath/dockerci": "1.0.*",
+		"mikey179/vfsStream": "1.1.*",
+		"phpunit/phpunit": "4.* || 5.*"
+	}
+}
