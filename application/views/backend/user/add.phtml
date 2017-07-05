@@ -1,0 +1,22 @@
+<?php echo form_open('user/add', ['class' => 'form-horizontal']); ?>
+    <div class="row">
+        <div class="col-sm-6">
+            <?php
+            echo form_fieldset('User data')
+                . form_input_group('username', true)
+                . form_password_group('password', true)
+                . form_password_group('con_password', true)
+                . form_input_group('first_name', true)
+                . form_input_group('last_name', true)
+                . form_input_group('email', false)
+                . form_fieldset_close();
+            ?>
+        </div>
+        <div class="col-sm-6">
+            <?php
+            echo form_fieldset('User settings')
+                . form_fieldset_close();
+            ?>
+        </div>
+    </div>
+<?php echo form_close(); ?>

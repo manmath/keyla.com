@@ -22,7 +22,17 @@
                         <?php echo heading('Header title', 2); ?>
                     </div>
                     <div class="panel panel-default">
-                        <div class="panel-body"></div>
+                        <div class="panel-body">
+                        <?php
+                        $dir = $this->uri->segment(1);
+                        $file = $this->uri->segment(2);
+                        if (is_null($file)) {
+                            $this->load->view('backend/' . $dir . '/index.phtml');
+                        } else {
+                            $this->load->view('backend/' . $dir . '/' . $file . '.phtml');
+                        }
+                        ?>
+                        </div>
                         <div class="panel-footer"></div>
                     </div>
                 </div>

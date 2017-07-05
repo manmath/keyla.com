@@ -19,6 +19,6 @@ class User extends MM_Controller
 
     public function add()
     {
-
+        $this->load->view('backend/index.phtml', $this->_data);
     }
 }
