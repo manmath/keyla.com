@@ -94,3 +94,4 @@ defined('SITE_TITLE') or define('SITE_TITLE', 'ព័ត៌មានកីឡា
 defined('CSS_PATH') or define('CSS_PATH', 'resources/public/css/');
 defined('JS_PATH') or define('JS_PATH', 'resources/public/js/');
 defined('IMG_PATH') or define('IMG_PATH', 'resources/public/img/');
+defined('DATE_FORMAT') or define('DATE_FORMAT', '%Y-%m-%d');

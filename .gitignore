@@ -4,6 +4,7 @@
 .idea
 .project
 .sass-cache
+.settings
 /application/cache/*
 /application/config/development
 /application/config/production

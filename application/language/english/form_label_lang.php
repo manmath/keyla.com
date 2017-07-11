@@ -10,13 +10,18 @@ defined('BASEPATH') OR exit('No direct script access allowed');
  */
 
 $lang = [
-    'username' => 'Username',
-    'password' => 'Password',
-    'con_password' => 'Confirm password',
-    'first_name' => 'First name',
-    'last_name' => 'Last name',
-    'gender' => 'Gender',
-    'email' => 'Email',
-    'role' => 'Role',
-    'slug' => 'Slug',
+    'label_username' => 'Username',
+    'label_password' => 'Password',
+    'label_con_password' => 'Confirm password',
+    'label_first_name' => 'First name',
+    'label_last_name' => 'Last name',
+    'label_gender' => 'Gender',
+    'label_email' => 'Email',
+    'label_role' => 'Role',
+    'label_slug' => 'Slug',
+    'label_enable' => 'Enable',
+    'label_role' => 'Role',
+    'label_full_name' => 'Name',
+    'label_crdate' => 'Created',
+    'label_modate' => 'Modified',
 ];

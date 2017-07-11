@@ -1,20 +1,32 @@
-<?php echo form_open('user/add', ['class' => 'form-horizontal']); ?>
+<?php echo form_open('user/add'); ?>
     <div class="row">
         <div class="col-sm-6">
             <?php
+            $genderOptions = [
+                'm' => 'Male',
+                'f' => 'Female'
+            ];
             echo form_fieldset('User data')
-                . form_input_group('username', true)
-                . form_password_group('password', true)
-                . form_password_group('con_password', true)
-                . form_input_group('first_name', true)
-                . form_input_group('last_name', true)
-                . form_input_group('email', false)
+                . form_input_group('username')
+                . form_password_group('password')
+                . form_password_group('con_password')
+                . form_input_group('first_name')
+                . form_input_group('last_name')
+                . form_input_group('email')
+                . form_dropdown_group('gender', $genderOptions, 'm')
+                . form_button_submit('save', 'Save', 'class="btn btn-default"')
                 . form_fieldset_close();
             ?>
         </div>
         <div class="col-sm-6">
             <?php
+            $roleOptions = [
+                '1' => 'Administrator',
+                '2' => 'Editor'
+            ];
             echo form_fieldset('User settings')
+                . form_dropdown_group('role', $roleOptions, 1)
+                . form_checkbox_group('enable', 1)
                 . form_fieldset_close();
             ?>
         </div>

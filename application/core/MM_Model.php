@@ -1,7 +1,13 @@
 <?php
-
 defined('BASEPATH') OR exit('No direct script access allowed');
 
+/**
+ * @package     Keyla.Today
+ * @copyright   (c) 2017, Man Math
+ * @license     http://opensource.org/licenses/MIT
+ * @link        http://www.keyla.today/
+ * @since       Version 1.0.0
+ */
 abstract class MM_Model extends CI_Model
 {
     const ORDER_ASCENDING = 'ASC';
@@ -15,19 +21,36 @@ abstract class MM_Model extends CI_Model
     /**
      * @var array
      */
-    protected $_defaultOrdering = [];
-
-    /**
-     * @var CI_DB_query_builder
-     */
-    public $db;
+    protected $_defaultSettings = [];
 
     public function __construct()
     {
-        parent::__construct();
-        $this->_defaultOrdering = [
-            'crdate' => self::ORDER_DESCENDING
+        $this->_defaultSettings = [
+            'order_by' => 'crdate ' . self::ORDER_DESCENDING
         ];
+    }
+
+    private function getDefaultSettings()
+    {
+        foreach ($this->_defaultSettings as $key => $value) {
+            $this->db->$key($value);
+        }
+    }
+
+    /**
+     * Retreive all records
+     *
+     * @return array|null
+     */
+    public function findAll()
+    {
+        $this->getDefaultSettings();
+        /** @var CI_DB_result $result */
+        $result = $this->db->get($this->_entity);
+        if ($result->num_rows() > 0) {
+            return $result->result_object();
+        }
+        return null;
     }
 
     /**
